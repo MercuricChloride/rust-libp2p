@@ -277,6 +277,12 @@ impl<TResponse> ResponseChannel<TResponse> {
 #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash, PartialOrd, Ord)]
 pub struct InboundRequestId(u64);
 
+impl InboundRequestId {
+    pub fn new(id: u64) -> Self {
+        InboundRequestId(id)
+    }
+}
+
 impl fmt::Display for InboundRequestId {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "{}", self.0)
@@ -289,6 +295,12 @@ impl fmt::Display for InboundRequestId {
 /// outbound requests of the same originating [`Behaviour`].
 #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash, PartialOrd, Ord)]
 pub struct OutboundRequestId(u64);
+
+impl OutboundRequestId {
+    pub fn new(id: u64) -> Self {
+        Self(id)
+    }
+}
 
 impl fmt::Display for OutboundRequestId {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
