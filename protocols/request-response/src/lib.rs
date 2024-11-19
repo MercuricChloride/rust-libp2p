@@ -275,7 +275,7 @@ impl<TResponse> ResponseChannel<TResponse> {
 /// Note: [`InboundRequestId`]'s uniqueness is only guaranteed between
 /// inbound requests of the same originating [`Behaviour`].
 #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash, PartialOrd, Ord)]
-pub struct InboundRequestId(u64);
+pub struct InboundRequestId(pub u64);
 
 impl InboundRequestId {
     pub fn new(id: u64) -> Self {
@@ -294,7 +294,7 @@ impl fmt::Display for InboundRequestId {
 /// Note: [`OutboundRequestId`]'s uniqueness is only guaranteed between
 /// outbound requests of the same originating [`Behaviour`].
 #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash, PartialOrd, Ord)]
-pub struct OutboundRequestId(u64);
+pub struct OutboundRequestId(pub u64);
 
 impl OutboundRequestId {
     pub fn new(id: u64) -> Self {
